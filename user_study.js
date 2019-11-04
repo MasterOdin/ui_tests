@@ -42,6 +42,7 @@ toggle.addEventListener('click', () => {
     toggle.classList.add('orange');
     toggle.classList.remove('yellow');
   }
+  toggle.textContent = `Toggle ${mode.charAt(0).toUpperCase() + mode.slice(1)}`;
   mode = mode === 'coarse' ? 'fine' : 'coarse';
   modeElem.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
   sensitivityElem.textContent = sensitivity[mode];
