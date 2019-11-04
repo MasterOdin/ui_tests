@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: auto;
   font-size: 36px;
 }
 
@@ -19,8 +19,9 @@ body {
   height: 100vh;
 }
 
-body {
-  margin: auto;
+.mode {
+  width: 50%;
+  background-color: white;
 }
 
 .note {

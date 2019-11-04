@@ -3,7 +3,6 @@ let sensitivity = {
   fine: 0
 };
 let sensitivityElem = document.getElementById('current-sensitivity');
-let modeElem = document.getElementById('mode');
 let mode = 'coarse';
 
 document.getElementById('plus').addEventListener('click', () => {
@@ -32,18 +31,27 @@ stop.addEventListener('click', () => {
   start.style.display = 'block';
 });
 
-const toggle = document.getElementById('toggle');
-toggle.addEventListener('click', () => {
+const fineElem = document.getElementById('mode-fine');
+const coarseElem = document.getElementById('mode-coarse');
+
+fineElem.addEventListener('click', () => {
+  if (mode === 'fine') {
+    return;
+  }
+  mode = 'fine';
+  coarseElem.classList.remove('orange');
+  fineElem.classList.add('orange');
+
+  sensitivityElem.textContent = sensitivity[mode];
+});
+
+coarseElem.addEventListener('click', () => {
   if (mode === 'coarse') {
-    toggle.classList.add('yellow');
-    toggle.classList.remove('orange');
+    return;
   }
-  else {
-    toggle.classList.add('orange');
-    toggle.classList.remove('yellow');
-  }
-  toggle.textContent = `Toggle ${mode.charAt(0).toUpperCase() + mode.slice(1)}`;
-  mode = mode === 'coarse' ? 'fine' : 'coarse';
-  modeElem.textContent = mode.charAt(0).toUpperCase() + mode.slice(1);
+  mode = 'coarse';
+  fineElem.classList.remove('orange');
+  coarseElem.classList.add('orange');
+
   sensitivityElem.textContent = sensitivity[mode];
 });
