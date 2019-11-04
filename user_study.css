@@ -159,3 +159,8 @@ button {
   width: 40px;
   display: inline-block;
 }
+
+
+.sensitivity-button {
+  border: 1px solid black;
+}
