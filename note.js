@@ -12,6 +12,8 @@ const returnButton = document.getElementById('return-button');
 const createButton = document.getElementById('create-button');
 const note = document.getElementById('note');
 const colorDrawer = document.getElementById('color-drawer');
+const inputDrawer = document.getElementById('input-drawer');
+const cancelButton = document.getElementById('cancel');
 
 const colors = [
   'yellow',
@@ -30,17 +32,22 @@ createButton.addEventListener('click', () => {
   colors.forEach((color) => note.classList.remove(color));
   note.classList.add('yellow');
   note.getElementsByTagName('textarea')[0].value = '';
+  note.getElementsByTagName('textarea')[0].focus();
   colorDrawer.style.display = 'flex';
+  inputDrawer.style.display = 'flex';
 });
 
 getButton.addEventListener('click', () => {
   createButton.style.display = 'none';
   getButton.style.display = 'none';
   placeButton.style.display = 'block';
+  cancelButton.style.display = 'block';
   note.style.display = 'block';
   note.getElementsByTagName('textarea')[0].value = lorem.generate(getRandomInt(5, 20));
   note.classList.add(colors[getRandomInt(0, colors.length-1)]);
   colorDrawer.style.display = 'flex';
+  inputDrawer.style.display = 'flex';
+
 });
 
 placeButton.addEventListener('click', () => {
@@ -50,6 +57,12 @@ placeButton.addEventListener('click', () => {
   getButton.style.display = 'block';
   createButton.style.display = 'block';
   colorDrawer.style.display = 'none';
+  inputDrawer.style.display = 'none';
+  cancelButton.style.display = 'none';
+});
+
+cancelButton.addEventListener('click', () => {
+  placeButton.dispatchEvent(new MouseEvent('click'));
 });
 
 for (const elem of document.getElementsByClassName('color')) {
@@ -59,6 +72,20 @@ for (const elem of document.getElementsByClassName('color')) {
     note.classList.add(color);
   });
 }
+
+document.addEventListener('mousedown', (event) => {
+  const target = event.target;
+  const textarea = note.getElementsByTagName('textarea')[0];
+  if (textarea && target !== textarea && target.classList.contains('color')) {
+    event.preventDefault();
+    event.stopPropagation();
+    return false;
+  }
+});
+
+note.getElementsByTagName('textarea')[0].addEventListener('focusout', (event) => {
+  console.log
+});
 
 const pointerOn = document.getElementById('pointer-on');
 const pointerOff = document.getElementById('pointer-off');
@@ -71,4 +98,42 @@ pointerOn.addEventListener('click', () => {
 pointerOff.addEventListener('click', () => {
   pointerOff.style.display = 'none';
   pointerOn.style.display = 'block';
+});
+
+for (const elem of document.getElementsByClassName('input')) {
+  elem.addEventListener('click', () => {
+    if (elem.classList.contains('active') || elem.getAttribute('id') === 'trash') {
+      return;
+    }
+
+    for (const elem of document.getElementsByClassName('active')) {
+      elem.classList.remove('active');
+    }
+    elem.classList.add('active');
+  });
+}
+
+document.getElementById('trash').addEventListener('click', () => {
+  const event = new MouseEvent('click');
+  placeButton.dispatchEvent(event);
+  for (const elem of document.getElementsByClassName('active')) {
+    elem.classList.remove('active');
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // with the page loaded, we transition from the initial "relative" spacing to absolute values
+  const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  const screenHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  document.body.style.width = screenWidth + "px";
+  document.body.style.height = screenHeight + "px";
+
+  const root = document.getElementById('root');
+  root.style.width = screenWidth + "px";
+  root.style.height = screenHeight + "px";
+
+  const topDrawer = document.getElementById('top-drawer');
+  console.log(topDrawer);
+  topDrawer.style.height = Math.max(topDrawer.clientHeight, topDrawer.innerHeight || 0) + "px";
 });

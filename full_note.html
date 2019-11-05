@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>note-displayer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/solid.min.css">
+
+    <link rel="stylesheet" href="full_note.css" type="text/css">
+    <style>
+.note {
+    width: 130px;
+    height: 130px;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+#cursor-container {
+    position: absolute;
+    width: 172px;
+    height: 172px;
+    opacity: 0.5;
+    display: none;
+}
+
+#overlay {
+    width: 100vh;
+    height: 100vh;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.selected {
+    display: none;
+}
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div>
+            <div class="note yellow" data-id="0" style="position: absolute; left: 81.6px; top: 86.8px;">foo bar baz</div>
+            <div class="note yellow" data-id="1" style="position: absolute; left: 244.8px; top: 520.8px;">lorem ipsum content</div>
+            <div class="note purple" data-id="2" style="position: absolute; left: 489.6px; top: 173.6px;">Sed porttitor nisl ligula, vitae maximus magna condimentum sit amet.</div>
+            <div class="note blue" data-id="3" style="position: absolute; left: 571.2px; top: 520.8px;">Vivamus consequat pharetra iaculis.</div>
+            <div class="note red" data-id="4" style="position: absolute; left: 308px; top: 334px;">test</div>
+        </div>
+
+        <div id="cursor" class="ball"></div>
+        <div id="cursor-container">
+
+        </div>
+    </div>
+    <div id="overlay">
+
+    </div>
+
+    <script src="full_note.js" defer=""></script>
+</body>
+
+</html>

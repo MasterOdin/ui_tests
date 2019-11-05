@@ -71,13 +71,55 @@ button {
   width: 100%;
 }
 
+#cancel {
+  float: left;
+  height: 25px;
+  width: 70px;
+  font-size: 18px;
+  border: 1px solid rgb(108, 142, 191);
+  text-align: center;
+}
+
+#cancel > span {
+  vertical-align: middle;
+}
+
+#input-drawer,
 #color-drawer {
   display: flex;
   flex-direction: column;
   position: absolute;
+  justify-content: space-between;
+}
+
+#input-drawer {
+  left: 0;
+  height: 200px;
+  top: 10%;
+}
+
+.active {
+  background-color: rgb(66, 144, 255);
+  border: 1px solid rgb(108, 142, 191);
+  color: white;
+}
+
+.input {
+  height: 24px;
+  width: 24px;
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
+.input > i {
+  vertical-align: middle;
+}
+
+#color-drawer {
   top: 3%;
   right: 0;
-  justify-content: space-between;
   height: 250px;
 }
 
