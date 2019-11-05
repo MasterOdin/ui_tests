@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>note-displayer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/solid.min.css" />
+    <link rel="stylesheet" href="note.css" type="text/css" />
+    <script src="lorem.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div>
+            <div style="float: left;"></div>
+            <div id="top-drawer">
+                <div id="color-drawer" style="display: none">
+                    <div class="color yellow"></div>
+                    <div class="color orange"></div>
+                    <div class="color green"></div>
+                    <div class="color blue"></div>
+                    <div class="color red"></div>
+                    <div class="color purple"></div>
+                </div>
+                <div id="create-button">
+                    <button class='button-blue'>Create Note</button>
+                </div>
+                <div id='note' class='yellow note' style='display: none'><textarea></textarea></div>
+            </div>
+            <div>
+                <button id="get-button">Get Note</button>
+                <button id="return-button" style="display: none">Return Note</button>
+                <button id="place-button" style="display: none">Place Note</button>
+                <button class='pointer green' id="pointer-on">Turn On Pointer</button>
+                <button class='pointer red' id="pointer-off" style="display: none">Turn Off Pointer</button>
+            </div>
+        </div>
+    </div>
+    <script src="note.js"></script>
+</body>
+</html>

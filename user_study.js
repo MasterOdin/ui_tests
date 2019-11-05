@@ -39,8 +39,10 @@ fineElem.addEventListener('click', () => {
     return;
   }
   mode = 'fine';
-  coarseElem.classList.remove('orange');
-  fineElem.classList.add('orange');
+  coarseElem.classList.remove('blue');
+  coarseElem.classList.add('disabled');
+  fineElem.classList.add('blue');
+  fineElem.classList.remove('disabled');
 
   sensitivityElem.textContent = sensitivity[mode];
 });
@@ -50,8 +52,10 @@ coarseElem.addEventListener('click', () => {
     return;
   }
   mode = 'coarse';
-  fineElem.classList.remove('orange');
-  coarseElem.classList.add('orange');
+  fineElem.classList.remove('blue');
+  fineElem.classList.add('disabled');
+  coarseElem.classList.add('blue');
+  coarseElem.classList.remove('disabled');
 
   sensitivityElem.textContent = sensitivity[mode];
 });
