@@ -186,6 +186,5 @@ document.addEventListener('DOMContentLoaded', () => {
       inputDrawer.style.display = 'none';
       document.getElementById('loading').remove();
     }, 1500);
-  }, 500);
-
+  }, 1500);
 });
