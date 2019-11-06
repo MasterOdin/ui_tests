@@ -55,6 +55,10 @@ getButton.addEventListener('click', () => {
 
 placeButton.addEventListener('click', () => {
   note.style.display = 'none';
+  noteTextarea.setAttribute('disabled', 'true');
+  for (let elem of document.getElementsByClassName('active')) {
+    elem.classList.remove('active');
+  }
   colors.forEach((color) => note.classList.remove(color));
   placeButton.style.display = 'none';
   getButton.style.display = 'block';
