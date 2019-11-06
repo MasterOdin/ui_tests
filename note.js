@@ -151,44 +151,41 @@ function setHeightOther(elem, other) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // with the page loaded, we transition from the initial "relative" spacing to absolute values
-  const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  const screenHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-  document.body.style.width = screenWidth + "px";
-  document.body.style.height = screenHeight + "px";
-
-  const root = document.getElementById('root');
-  root.style.width = screenWidth + "px";
-  root.style.height = screenHeight + "px";
-
-  const topDrawer = document.getElementById('top-drawer');
-  setHeight(topDrawer);
-  setHeight(colorDrawer);
-  colorDrawer.style.top = (screenHeight * .06) + "px";
-  setHeight(inputDrawer);
-  inputDrawer.style.top = (screenHeight * .1) + "px";
-  setHeight(createButton);
-  createButton.style.display = 'none';
-  note.style.display = 'block';
-  setHeight(note);
-  note.style.display = 'none';
-  createButton.style.display = 'block';
-  setHeightOther(placeButton, getButton);
-  setHeightOther(returnButton, getButton);
-  setHeight(getButton);
-
-  setHeightOther(pointerOff, pointerOn);
-  setHeight(pointerOn);
-
   setTimeout(() => {
-    colorDrawer.style.display = 'none';
-    inputDrawer.style.display = 'none';
-    document.getElementById('loading').remove();
-  }, 1500);
-});
+    // with the page loaded, we transition from the initial "relative" spacing to absolute values
+    const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const screenHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    document.body.style.width = screenWidth + "px";
+    document.body.style.height = screenHeight + "px";
 
-/*
-setTimeout(() => {
-  document.getElementById('loading').remove();
-}, 2000);
-*/
+    const root = document.getElementById('root');
+    root.style.width = screenWidth + "px";
+    root.style.height = screenHeight + "px";
+
+    const topDrawer = document.getElementById('top-drawer');
+    setHeight(topDrawer);
+    setHeight(colorDrawer);
+    colorDrawer.style.top = (screenHeight * .06) + "px";
+    setHeight(inputDrawer);
+    inputDrawer.style.top = (screenHeight * .1) + "px";
+    setHeight(createButton);
+    createButton.style.display = 'none';
+    note.style.display = 'block';
+    setHeight(note);
+    note.style.display = 'none';
+    createButton.style.display = 'block';
+    setHeightOther(placeButton, getButton);
+    setHeightOther(returnButton, getButton);
+    setHeight(getButton);
+
+    setHeightOther(pointerOff, pointerOn);
+    setHeight(pointerOn);
+
+    setTimeout(() => {
+      colorDrawer.style.display = 'none';
+      inputDrawer.style.display = 'none';
+      document.getElementById('loading').remove();
+    }, 1500);
+  }, 500);
+
+});
