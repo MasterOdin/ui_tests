@@ -121,6 +121,13 @@ document.getElementById('trash').addEventListener('click', () => {
   }
 });
 
+function setHeight(elem) {
+  elem.style.height = Math.max(elem.clientHeight, elem.innerHeight || 0) + "px";
+}
+
+function setHeightOther(elem, other) {
+  elem.style.height = Math.max(other.clientHeight, other.innerHeight || 0) + "px";
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   // with the page loaded, we transition from the initial "relative" spacing to absolute values
@@ -134,6 +141,28 @@ document.addEventListener('DOMContentLoaded', () => {
   root.style.height = screenHeight + "px";
 
   const topDrawer = document.getElementById('top-drawer');
-  console.log(topDrawer);
-  topDrawer.style.height = Math.max(topDrawer.clientHeight, topDrawer.innerHeight || 0) + "px";
+  setHeight(topDrawer);
+  setHeight(colorDrawer);
+  setHeight(inputDrawer);
+  setHeight(createButton);
+  createButton.style.display = 'none';
+  note.style.display = 'block';
+  setHeight(note);
+  note.style.display = 'none';
+  createButton.style.display = 'block';
+  setHeight(getButton);
+  setHeightOther(placeButton, getButton);
+  setHeightOther(returnButton, getButton);
+
+  setHeight(pointerOn);
+  setHeightOther(pointerOff, pointerOn);
+
+  document.getElementById('loading').remove();
+
 });
+
+/*
+setTimeout(() => {
+  document.getElementById('loading').remove();
+}, 2000);
+*/

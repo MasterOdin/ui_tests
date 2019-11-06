@@ -161,3 +161,20 @@ button {
   background-color: rgb(225, 213, 231);
   border: 1px solid rgb(150, 115, 166);
 }
+
+#loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background: white;
+}
+
+#loading > span {
+  vertical-align: middle;
+  position: relative;
+  top: 40%;
+  font-size: 32px;
+}
