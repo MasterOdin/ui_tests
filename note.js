@@ -160,7 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const topDrawer = document.getElementById('top-drawer');
   setHeight(topDrawer);
   setHeight(colorDrawer);
+  colorDrawer.style.top = (screenHeight * .06) + "px";
   setHeight(inputDrawer);
+  inputDrawer.style.top = (screenHeight * .1) + "px";
   setHeight(createButton);
   createButton.style.display = 'none';
   note.style.display = 'block';
