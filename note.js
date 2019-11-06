@@ -143,9 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const topDrawer = document.getElementById('top-drawer');
   setHeight(topDrawer);
   setHeight(colorDrawer);
-  colorDrawer.style.display = 'none';
   setHeight(inputDrawer);
-  inputDrawer.style.display = 'none';
   setHeight(createButton);
   createButton.style.display = 'none';
   note.style.display = 'block';
@@ -159,8 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
   setHeight(pointerOn);
   setHeightOther(pointerOff, pointerOn);
 
-  document.getElementById('loading').remove();
-
+  setTimeout(() => {
+    colorDrawer.style.display = 'none';
+    inputDrawer.style.display = 'none';
+    document.getElementById('loading').remove();
+  }, 1500);
 });
 
 /*
