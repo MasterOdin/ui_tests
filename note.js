@@ -143,7 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const topDrawer = document.getElementById('top-drawer');
   setHeight(topDrawer);
   setHeight(colorDrawer);
+  colorDrawer.style.display = 'none';
   setHeight(inputDrawer);
+  inputDrawer.style.display = 'none';
   setHeight(createButton);
   createButton.style.display = 'none';
   note.style.display = 'block';
