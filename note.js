@@ -135,10 +135,12 @@ document.getElementById('input-mic').addEventListener('click', () => {
 
 document.getElementById('trash').addEventListener('click', () => {
   noteTextarea.setAttribute('disabled', 'true');
-  const event = new MouseEvent('click');
-  placeButton.dispatchEvent(event);
-  for (const elem of document.getElementsByClassName('active')) {
-    elem.classList.remove('active');
+  if (confirm('Are you sure you want to delete this note?')) {
+    const event = new MouseEvent('click');
+    placeButton.dispatchEvent(event);
+    for (const elem of document.getElementsByClassName('active')) {
+      elem.classList.remove('active');
+    }
   }
 });
 
