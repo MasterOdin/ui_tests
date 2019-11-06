@@ -11,9 +11,12 @@ const placeButton = document.getElementById('place-button');
 const returnButton = document.getElementById('return-button');
 const createButton = document.getElementById('create-button');
 const note = document.getElementById('note');
+const noteTextarea = document.getElementById('note-textarea');
 const colorDrawer = document.getElementById('color-drawer');
 const inputDrawer = document.getElementById('input-drawer');
 const cancelButton = document.getElementById('cancel');
+
+const drawInput = false;
 
 const colors = [
   'yellow',
@@ -113,7 +116,21 @@ for (const elem of document.getElementsByClassName('input')) {
   });
 }
 
+document.getElementById('input-text').addEventListener('click', () => {
+  noteTextarea.removeAttribute('disabled');
+  noteTextarea.focus();
+});
+
+document.getElementById('input-brush').addEventListener('click', () => {
+  noteTextarea.setAttribute('disabled', 'true');
+});
+
+document.getElementById('input-mic').addEventListener('click', () => {
+  noteTextarea.setAttribute('disabled', 'true');
+});
+
 document.getElementById('trash').addEventListener('click', () => {
+  noteTextarea.setAttribute('disabled', 'true');
   const event = new MouseEvent('click');
   placeButton.dispatchEvent(event);
   for (const elem of document.getElementsByClassName('active')) {
@@ -150,12 +167,12 @@ document.addEventListener('DOMContentLoaded', () => {
   setHeight(note);
   note.style.display = 'none';
   createButton.style.display = 'block';
-  setHeight(getButton);
   setHeightOther(placeButton, getButton);
   setHeightOther(returnButton, getButton);
+  setHeight(getButton);
 
-  setHeight(pointerOn);
   setHeightOther(pointerOff, pointerOn);
+  setHeight(pointerOn);
 
   setTimeout(() => {
     colorDrawer.style.display = 'none';

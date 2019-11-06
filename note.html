@@ -19,9 +19,9 @@
             <div id="top-drawer">
                 <div id="cancel" style="display: none"><span>Cancel</span></div>
                 <div id="input-drawer">
-                    <div class="input" id="text"><i class="fas fa-font"></i></div>
-                    <div class="input"><i class="fas fa-paint-brush"></i></div>
-                    <div class="input"><i class="fas fa-microphone"></i></div>
+                    <div id='input-text' class="input" id="text"><i class="fas fa-font"></i></div>
+                    <div id='input-brush' class="input"><i class="fas fa-paint-brush"></i></div>
+                    <div id='input-mic' class="input"><i class="fas fa-microphone"></i></div>
                     <div class="input" id="trash"><i class="fas fa-trash"></i></div>
                 </div>
                 <div id="color-drawer">
@@ -35,7 +35,7 @@
                 <div id="create-button">
                     <button class='button-blue'>Create Note</button>
                 </div>
-                <div id='note' class='yellow note' style='display: none'><textarea disabled="disabled"></textarea></div>
+                <div id='note' class='yellow note' style='display: none'><textarea id='note-textarea' disabled='true'></textarea></div>
             </div>
             <div>
                 <button id="get-button">Get Note</button>
