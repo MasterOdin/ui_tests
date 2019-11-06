@@ -18,8 +18,13 @@
             <button class='blue' id='click'>Mouse Click</button>
             <button class='mode blue' id='mode-coarse'>Coarse</button><button class='mode disabled' id='mode-fine'>Fine</button>
         </div>
-        <div id="sensitivity">
-            <span id="minus" class="sensitivity-button">-</span>&nbsp;<span id='current-sensitivity'>0</span><span id='plus' class="sensitivity-button">+</span>
+        <div id='sensitivity' class="slidecontainer">
+            <div class='label'>Sensitivity: <span id='sensitivity-label'>0</span></div>
+            <input type="range" min="-50" max="50" value="0" class="slider" id="sensitivity-range">
+        </div>
+        <div id='smoothing' class="slidecontainer">
+            <div class='label'>Smoothing: <span id='smoothing-label'>0</span></div>
+            <input type="range" min="0" max="20" value="0" class="slider" id="smoothing-range">
         </div>
     </div>
 

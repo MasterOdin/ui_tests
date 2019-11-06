@@ -154,6 +154,7 @@ button {
   margin-bottom: 30px;
 }
 
+/*
 #sensitivity {
   position: absolute;
   bottom: 20px;
@@ -166,8 +167,53 @@ button {
   width: 40px;
   display: inline-block;
 }
-
+*/
 
 .sensitivity-button {
   border: 1px solid black;
+}
+
+.slidecontainer {
+  width: 95%; /* Width of the outside container */
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.slidecontainer > .label {
+  margin-left: 20px;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #ececec; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border: 1px solid black;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: rgb(66, 144, 255); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: rgb(66, 144, 255); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+#smoothing {
+  margin-top: 15%;
 }

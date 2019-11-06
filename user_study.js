@@ -5,6 +5,7 @@ let sensitivity = {
 let sensitivityElem = document.getElementById('current-sensitivity');
 let mode = 'coarse';
 
+/*
 document.getElementById('plus').addEventListener('click', () => {
   sensitivity[mode]++
   sensitivity[mode] = Math.min(9, sensitivity[mode]);
@@ -16,7 +17,7 @@ document.getElementById('minus').addEventListener('click', () => {
   sensitivity[mode] = Math.max(-9, sensitivity[mode]);
   sensitivityElem.textContent = sensitivity[mode];
 });
-
+*/
 
 const start = document.getElementById('start');
 const stop = document.getElementById('stop');
@@ -44,7 +45,8 @@ fineElem.addEventListener('click', () => {
   fineElem.classList.add('blue');
   fineElem.classList.remove('disabled');
 
-  sensitivityElem.textContent = sensitivity[mode];
+  document.getElementById('sensitivity-label').textContent = sensitivity[mode];
+  document.getElementById('sensitivity-range').value = sensitivity[mode];
 });
 
 coarseElem.addEventListener('click', () => {
@@ -57,5 +59,15 @@ coarseElem.addEventListener('click', () => {
   coarseElem.classList.add('blue');
   coarseElem.classList.remove('disabled');
 
-  sensitivityElem.textContent = sensitivity[mode];
+  document.getElementById('sensitivity-label').textContent = sensitivity[mode];
+  document.getElementById('sensitivity-range').value = sensitivity[mode];
+});
+
+document.getElementById('sensitivity-range').addEventListener('input', (event) => {
+  sensitivity[mode] = event.target.value;
+  document.getElementById('sensitivity-label').textContent = event.target.value;
+});
+
+document.getElementById('smoothing-range').addEventListener('input', (event) => {
+  document.getElementById('smoothing-label').textContent = event.target.value;
 });
