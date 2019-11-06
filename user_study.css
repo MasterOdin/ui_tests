@@ -102,6 +102,7 @@ button {
 
 .slidecontainer > .label {
   margin-left: 20px;
+  font-size: 4vh;
 }
 
 /* The slider itself */
