@@ -46,11 +46,10 @@ getButton.addEventListener('click', () => {
   placeButton.style.display = 'block';
   cancelButton.style.display = 'block';
   note.style.display = 'block';
-  note.getElementsByTagName('textarea')[0].value = lorem.generate(getRandomInt(5, 20));
+  note.getElementsByTagName('textarea')[0].value = lorem.generate(getRandomInt(10, 30));
   note.classList.add(colors[getRandomInt(0, colors.length-1)]);
   colorDrawer.style.display = 'flex';
   inputDrawer.style.display = 'flex';
-
 });
 
 placeButton.addEventListener('click', () => {
@@ -155,8 +154,12 @@ function setHeightOther(elem, other) {
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     // with the page loaded, we transition from the initial "relative" spacing to absolute values
+    /*
     const screenWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
     const screenHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    */
+    const screenWidth = screen.width;
+    const screenHeight = screen.height;
     document.body.style.width = screenWidth + "px";
     document.body.style.height = screenHeight + "px";
 
