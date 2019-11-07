@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const screenHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     */
     const screenWidth = screen.width;
-    const screenHeight = screen.height - 200;
+    const screenHeight = screen.height - 56;
     document.body.style.width = screenWidth + "px";
     document.body.style.height = screenHeight + "px";
 
@@ -167,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     root.style.width = screenWidth + "px";
     root.style.height = screenHeight + "px";
 
+    /*
     const topDrawer = document.getElementById('top-drawer');
     setHeight(topDrawer);
     setHeight(colorDrawer);
@@ -186,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setHeightOther(pointerOff, pointerOn);
     setHeight(pointerOn);
 
+*/
     setTimeout(() => {
       colorDrawer.style.display = 'none';
       inputDrawer.style.display = 'none';
