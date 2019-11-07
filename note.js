@@ -167,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
     root.style.width = screenWidth + "px";
     root.style.height = screenHeight + "px";
 
-    /*
     const topDrawer = document.getElementById('top-drawer');
     setHeight(topDrawer);
     setHeight(colorDrawer);
@@ -187,7 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setHeightOther(pointerOff, pointerOn);
     setHeight(pointerOn);
 
-*/
     setTimeout(() => {
       colorDrawer.style.display = 'none';
       inputDrawer.style.display = 'none';
