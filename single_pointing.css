@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  background-color: #000431;
+}
+
+#content {
+  width: 100%;
+  height: 100vh;
+}
+
+#start {
+  font-size: 62px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  border: 1px solid black;
+  background-color: lightgreen;
+  padding: 10px;
+}
+
+.bar {
+  height: 70%;
+  width: 50px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  border: 1px solid black;
+  background: white;
+}
+
+#left-bar {
+  transform: translateX(-550px);
+}
+
+#right-bar {
+  transform: translateX(500px);
+}
+
+.plus {
+  position: absolute;
+  color: red;
+  font-size: 36px;
+  cursor: default;
+  user-select: none;
+}
+
+.active {
+  background-color: lightgreen;
+}
