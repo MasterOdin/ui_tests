@@ -1,6 +1,12 @@
+html {
+  overflow: hidden;
+}
+
 body {
+  position: fixed;
   margin: 0;
   overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .ball {
