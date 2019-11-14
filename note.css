@@ -9,16 +9,6 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.ball {
-  position: absolute;
-  top   : 90px;
-  left  : 90px;
-  width : 20px;
-  height: 20px;
-  background: green;
-  border-radius: 100%;
-}
-
 #root {
   margin: 0;
   width: 100%;
@@ -27,10 +17,6 @@ body {
 
 #root > div {
   height: 100%;
-}
-
-body {
-  margin: auto;
 }
 
 .note {
